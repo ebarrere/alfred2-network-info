@@ -24,7 +24,7 @@ shopt -s nocasematch
 QUERY=$(echo "$1" | sed -e 's/^[ \t]*//' -e 's/[ \t]*$//' -e 's/ /* /g')
 
 # get the path to ipcalc, exit if not found
-IPCALC=$(which ipcalc)
+IPCALC=$(which ipcalc || echo ./lib/ipcalc)
 [[ -x $IPCALC ]] || die "Could not find ipcalc in your path.  Please download from\nhttp://jodies.de/ipcalc or install with homebrew"
 
 # basic QUERY string test
